@@ -7,7 +7,8 @@
         <div class="kt-portlet">
             <div class="kt-portlet__body">
                 <h1 class="display-4">Capture your thoughts and feelings</h1>
-                <p><b>Please share your fears, frustrations, and hopes.</b>
+                <p><b>Please share your fears, frustrations, and needs 
+                during this time of crisis, as well as what is helping you to get through it.</b> 
                 Your recording can range from 30 seconds to 5 minutes.
                 It will be transcribed by Google's transcription service,
                 and you will be able to view a <b>word cloud</b> created from the transcript.

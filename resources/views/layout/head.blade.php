@@ -10,7 +10,7 @@
 
     <!--begin::Page Custom Styles(used by this page) -->
     <link href="{{ asset('css/pages/login/login-3.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/pages/wizard/wizard-2.css') }}" rel="stylesheet" type="text/css">
+    @yield('styles')
     <!--end::Page Custom Styles -->
 
     <!--begin::Global Theme Styles(used by all pages) -->

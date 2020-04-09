@@ -10,6 +10,9 @@ let input;
 let AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioContext = new AudioContext;
 //new audio context to help us record
+let timeoutRequest;
+let lastStartTime;
+let timeRemaining;
 let recordButton = document.getElementById("recordButton");
 let stopButton = document.getElementById("stopButton");
 let pauseButton = document.getElementById("pauseButton");
@@ -60,11 +63,20 @@ https://addpipe.com/blog/audio-constraints-getusermedia/ */
         rec.record()
         console.log("Recording started");
         recordButton.innerHTML = "<i class=\"la la-circle\"></i> Recording";
+
+        lastStartTime = new Date().getTime();
+        //limit recording to 5 mins = 300,000 ms
+        timeRemaining = 300000;
+        timeoutRequest = setTimeout(function() {
+            if (!stopButton.disabled) {
+                this.stopRecording();
+            }
+        }, timeRemaining);
     }).catch(function(err) {
         //enable the record button if getUserMedia() fails
         recordButton.disabled = false;
         stopButton.disabled = true;
-        pauseButton.disabled = true
+        pauseButton.disabled = true;
     });
 }
 
@@ -74,10 +86,24 @@ function pauseRecording(){
         //pause
         rec.stop();
         pauseButton.innerHTML = "<i class=\"la la-play\"></i> Resume";
+
+        //update time remaining
+        const currentTime = new Date().getTime();
+        const timeElapsed = currentTime - lastStartTime;
+        timeRemaining = timeRemaining - timeElapsed;
+        clearTimeout(timeoutRequest);
+
     } else {
         //resume
         rec.record();
         pauseButton.innerHTML = "<i class=\"la la-pause\"></i> Pause";
+
+        lastStartTime = new Date().getTime();
+        timeoutRequest = setTimeout(function() {
+            if (!stopButton.disabled) {
+                this.stopRecording();
+            }
+        }, timeRemaining);
     }
 }
 
@@ -96,6 +122,8 @@ function stopRecording() {
     gumStream.getAudioTracks()[0].stop();
     //create the wav blob and pass it on to createDownloadLink
     rec.exportWAV(createDownloadLink);
+
+    clearTimeout(timeoutRequest);
 }
 
 function createDownloadLink(blob) {

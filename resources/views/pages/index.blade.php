@@ -24,9 +24,11 @@
         <p>The Child Mind Institute and its research partners*
         are deeply committed to research and care of mental health
         and we are here to listen.
-        We urge you to share with us your fears, frustrations, and hopes
-        as an audio clip or video by clicking the link below.</p>
-
+        We urge you to share with us your fears, 
+        frustrations, and needs during this time of crisis, 
+        as well as what is helping you to get through it,
+        by recording audio or video at the link below.</p>
+        
         <div class="text-center">
             <a href="{{ route('capture-choice') }}" class="btn-primary btn btn-wide btn-lg">Share Your Thoughts</a>
         </div>
@@ -47,7 +49,8 @@
         publicly shared recordings or transcripts.</p>
 
         <p>*Our list of partners is growing, and presently includes 
-        <a href="https://openhumans.org">Open Humans</a>,
+        the National Institute of Mental Health,
+	    <a href="https://openhumans.org">Open Humans</a>,
         the <a href="https://cri-paris.org">CRI</a> in Paris, and
         <a href="https://mcgovern.mit.edu/profile/satrajit-ghosh/">Satrajit Ghosh</a>
         and Sanu Abraham at MIT.

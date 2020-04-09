@@ -152,11 +152,6 @@ video {
 footer {
   padding-top: 12px;
   padding-bottom: 12px;
-  background: #e1e1ef;
-  box-sizing: border-box;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 footer img {
   max-height: 50px;

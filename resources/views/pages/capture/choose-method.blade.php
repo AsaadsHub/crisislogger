@@ -9,10 +9,14 @@
                 <h1 class="display-4">How would you like to capture your thoughts?</h1>
                 <div class="text-center">
                     <a href="{{ route('capture-audio') }}?voice={{ $_GET['voice'] ?? '' }}" class="btn btn-primary btn-wide mr-5 btn-lg">Audio</a>
-                    <a href="{{ route('capture-video') }}?voice={{ $_GET['voice'] ?? '' }}" class="btn btn-primary btn-wide btn-lg">Video</a>
+                    <a id="videoButton" href="{{ route('capture-video') }}?voice={{ $_GET['voice'] ?? '' }}" class="btn btn-primary btn-wide btn-lg">Video</a>
                 </div>
             </div>
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/pages/choose-method.js') }}?time={{ time() }}"></script>
 @endsection

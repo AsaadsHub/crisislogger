@@ -12,18 +12,22 @@
         </div>
     </div>
     <!-- end:: Page -->
-
+    <!--
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <p>©2020 Child Mind Institute</p>
+                <div class="col-sm-12 col-md-12 col-lg-3" style="display:flex">
+                    <p style="margin:auto; padding-top:4px; padding-bottom:4px">©2020 Child Mind Institute</p>
                 </div>
-                <div class="col-sm-12 col-md-3">
-                    <img src="{{ asset('media/logos/open-humans.png') }}" alt="" style="" />
+                <div class="col-sm-12 col-md-6 col-lg-6" style="display:flex">
+                    <img src="{{ asset('media/logos/open-humans.png') }}" alt="" style="margin:auto" />
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3" style="display:flex">
+                    <img src="{{ asset('media/logos/CRI.png') }}" alt="" style="margin:auto" />
                 </div>
             </div>
         </div>
     </footer>
+    -->
     @include('layout.footer')
 </body>
