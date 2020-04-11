@@ -1,4 +1,4 @@
-var video, timeoutRequest, reqBtn, startBtn, stopBtn, stream, recorder, uploadBtn;
+var video, reqBtn, startBtn, stopBtn, stream, recorder, uploadBtn;
 video = document.getElementById('video');
 reqBtn = document.getElementById('cameraButton');
 startBtn = document.getElementById('recordButton');
@@ -39,16 +39,9 @@ function startRecording() {
         mimeType: 'video/webm'
     });
     recorder.start();
-    stopBtn.disabled = false;
+    stopBtn.removeAttribute('disabled');
     startBtn.disabled = true;
     startBtn.innerHTML = "<i class=\"la la-circle\"></i> Recording";
-
-    //limit recording to 5 mins = 300,000 ms
-    timeoutRequest = setTimeout(function() {
-        if (!stopBtn.disabled) {
-            this.stopRecording();
-        }
-    }, 300000);
 }
 
 
@@ -75,5 +68,4 @@ function stopRecording() {
         });
     };
     recorder.stop();
-    clearTimeout(timeoutRequest);
 }

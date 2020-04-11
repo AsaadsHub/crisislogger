@@ -1,0 +1,19 @@
+{
+    "name": "Insight",
+    "short_name": "Insight",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#4ab7c3",
+    "background_color": "#4ab7c3",
+    "display": "standalone"
+}

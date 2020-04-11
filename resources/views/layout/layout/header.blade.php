@@ -6,7 +6,7 @@
             </div>
             <div class="col-sm-12 col-md-8">
                 <div class="float-right">
-                    <a href="https://parentlogger.org/capture?voice=parent" class="btn btn-primary btn-wide mr-2">Share Your Thoughts</a>
+                    <a href="{{ route('capture-choice') }}" class="btn btn-primary btn-wide mr-2">Share Your Thoughts</a>
                     @auth
                         <div class="btn-group">
                             <a href="{{ route('dashboard') }}" class="btn btn-link">Dashboard</a>

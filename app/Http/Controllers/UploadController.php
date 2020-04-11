@@ -14,7 +14,6 @@ use Auth;
 
 class UploadController extends Controller
 {
-
     /**
      * @param UploadRequest $request
      * @return JsonResponse
@@ -39,28 +38,33 @@ class UploadController extends Controller
         if($request->has('voice')){
             $upload->voice = $request->voice;
         }
-
+        else
+        {
+            $upload->voice = 'parent';
+        }
+        
         $upload->save();
 
         // Check and see if the user needs to be redirected to the questionnaire page (if sharing)
-        if($upload->share){
-            $redirect = route('questionnaire');
-        } else {
+        //if(!$upload->share){
             $redirect = route('capture-create-account');
-        }
+        //}
 
         // If the are contributing to science, we will transcribe the message and save it
         if($upload->contribute_to_science){
-           // if($file_extension == 'wav' || $file_extension == 'mp3'){
+           if($file_extension == 'wav' || $file_extension == 'mp3'){
                 $transcription = Transcription::audio($upload);
-           // } else {
-            //    $transcription = Transcription::video($upload);
-            //}
+            }
+            else
+            {
+               $transcription = Transcription::video($upload);
+            }
+            
             Session::put('transcription', $transcription->id);
         }
 
         $response = [
-            'message' => 'File uploaded successfully.',
+            'message' => 'File uploaded successfully. ONE MORE STEP: Enter your email address on the next screen for us to log your recording.',
             'file' => $file,
             'redirect' => $redirect,
             'transcription' => $transcription->id ?? null

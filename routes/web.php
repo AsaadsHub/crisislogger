@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('pages.index');
 })->name('home');
 
-Route::get('questionnaire', function () {
-    return view('pages.questionnaire.index');
-})->name('questionnaire');
-
 Route::prefix('capture')->group(function() {
 
     Route::get('/', function () {

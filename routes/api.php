@@ -34,4 +34,4 @@ Route::prefix('transcribe')->group(function(){
    Route::get('audio/{name}', 'TranscribeController@transcribeAudio');
 });
 
-Route::post('questionnaire', 'QuestionnaireController@upload')->name('questionnaire_form_upload');
+//Route::post('questionnaire', 'QuestionnaireController@upload')->name('questionnaire_form_upload');
