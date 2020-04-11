@@ -10,6 +10,7 @@
                 <div class="text-center">
                     <a href="{{ route('capture-audio') }}?voice={{ $_GET['voice'] ?? '' }}" class="btn btn-primary btn-wide mr-5 btn-lg">Audio</a>
                     <a id="videoButton" href="{{ route('capture-video') }}?voice={{ $_GET['voice'] ?? '' }}" class="btn btn-primary btn-wide btn-lg">Video</a>
+                    <a  href="#" class="btn ml-5 btn-primary btn-wide btn-lg">Text</a>
                 </div>
             </div>
         </div>

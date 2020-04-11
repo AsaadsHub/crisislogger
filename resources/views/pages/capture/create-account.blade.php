@@ -8,24 +8,11 @@
     <div class="container content">
         <div class="kt-portlet">
             <div class="kt-portlet__body">
-                
+
                 <h1 class="display-4">LAST STEP: User Information</h1>
-                <p><b>REQUIRED: Fill in your email</b> to ensure that your recording is connected to you.  You may optionally enter a name and password to create an account to come back and see your recordings and word clouds.</p>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-
-                    <div class="form-group">
-                        <label>Email address<span class="text-danger">*</span></label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" aria-describedby="emailHelp" name="email" required placeholder="Enter email">
-                        <span class="form-text text-muted">We'll never share your email with anyone else.</span>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                <p><b>OPTIONAL</b>:  Please fill in your name and a password to come back and see your previous submissions.</p>
+                    <p>Please fill in your name and a password to come back and see your previous submissions.</p>
 
                     <div class="form-group">
                         <label>Name</label>
@@ -55,6 +42,7 @@
                     </div>
 
                     <input type="hidden" value="{{ Session::get('filename') }}" name="filename" />
+
                 </form>
 
                 <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>

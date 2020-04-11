@@ -54,7 +54,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['nullable', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'email' => ['required', 'string', 'email', 'max:255'], we don't do a email validation this step.
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'filename' => ['nullable', 'string'],
         ]);
@@ -68,50 +68,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = new User();
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->password = Hash::make($data['password']);
-        $user->save();
-
-        // Check and see if we have a filename in session
-        if(Session::has('filename')){
-            $upload = Upload::where('name', Session::get('filename'))->first();
-            if($upload){
-                $upload->user_id = $user->id;
-                $upload->save();
-            }
-            Session::remove('filename');
-        } else {
-            // Check and see if we are sending the filename along
-            if($data['filename']){
-                $upload = Upload::where('name', $data['filename'])->first();
-                if($upload){
-                    $upload->user_id = $user->id;
-                    $upload->save();
-                }
-            }
+        if (session()->has('temp_user_id'))
+        {
+            $user_id = session()->get('temp_user_id');
+            $user = User::findOrFail($user_id);
+            $user->name = $data['name'];
+            $user->password = Hash::make($data['password']);
+            $user->update();
         }
-
-        // Check and see if we have a transcription to add
-        if(Session::has('transcription')){
-            $transcription = Transcription::where('id', Session::get('transcription'))->first();
-            if($transcription){
-                $transcription->user_id = $user->id;
-                $transcription->save();
-            }
-            Session::remove('transcription');
-        } else {
-            // Check and see if we are sending the transcription along
-            if($data['transcription']){
-                $transcription = Transcription::where('id', $data['transcription'])->first();
-                if($transcription){
-                    $transcription->user_id = $user->id;
-                    $transcription->save();
-                }
-            }
+        else {
+            $user = new User();
+            $user->name = $data['name'];
+            $user->password = Hash::make($data['password']);
+            $user->save();
         }
-
         return $user;
     }
 }
