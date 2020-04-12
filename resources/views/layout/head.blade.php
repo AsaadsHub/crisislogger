@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
 
-    <title>@yield('title') | {{ config('app.name') }}</title>
+    <title>{{ config('app.name') }}</title>
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,5 +25,19 @@
     <link href="{{ asset('css/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />        <!--end::Layout Skins -->
     <link href="{{ asset('scss/main.css') }}?time={{ time() }}" rel="stylesheet" type="text/css" />
 
+    <style>
 
+        .text-ellipsis {
+            height: 150px;
+            display: inline-block;
+            /* width: 514px; */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 20px;
+            font-size: 1.3rem;
+            margin: 0px;
+            background: rgba(228, 228, 228, 0.98);
+            resize: both;
+        }
+    </style>
 </head>

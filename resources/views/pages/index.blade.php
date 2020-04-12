@@ -29,8 +29,9 @@
         by clicking the link below.</p>
 
         <p><b>Child Mind Medical Practice and Healthy Brain Network parents only at this time</b>:</p>
-        <p class="mt-4"><b>REQUIRED: Fill in your email</b> to ensure that your recording is connected to you.  You may optionally enter a name and password to create an account to come back and see your recordings and word clouds.</p>
-
+        @if (!Auth::check())
+            <p class="mt-4"><b>REQUIRED: Fill in your email</b> to ensure that your recording is connected to you.  You may optionally enter a name and password to create an account to come back and see your recordings and word clouds.</p>
+        @endif
         <div class="col-lg-6 col-md-8 col-xs-12" id="share-thought-form">
             @if (!Auth::check())
             <form action="{{route('capture', ['voice'=> 'parent'])}}" method="post">

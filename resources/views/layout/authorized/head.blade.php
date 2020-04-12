@@ -24,5 +24,19 @@
     <link href="{{ asset('css/skins/brand/dark.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />        <!--end::Layout Skins -->
     <link href="{{ asset('scss/main.css') }}" rel="stylesheet" type="text/css" />
+    <style>
 
+        .text-ellipsis {
+            height: 150px;
+            display: inline-block;
+            /* width: 514px; */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 20px;
+            font-size: 1.3rem;
+            margin: 0px;
+            background: rgba(228, 228, 228, 0.98);
+            resize: both;
+        }
+    </style>
 </head>

@@ -6,8 +6,8 @@
             </div>
             <div class="col-sm-12 col-md-8">
                 <div class="float-right">
-                    <a href="{{ route('capture-choice') }}" class="btn btn-primary btn-wide mr-2">Share Your Thoughts</a>
-                    @auth
+                    @if(Auth::check())
+                        <a href="{{ route('capture-choice') }}" class="btn btn-primary btn-wide mr-2">Share Your Thoughts</a>
                         <div class="btn-group">
                             <a href="{{ route('dashboard') }}" class="btn btn-link">Dashboard</a>
                             <a class="btn btn-link" href="{{ route('logout') }}"
@@ -17,12 +17,20 @@
                                 <span>{{ __('Logout') }}</span>
                             </a>
                         </div>
+                        <a class="btn btn-link" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            <i class="ni ni-user-run"></i>
+                            <span>{{ __('Logout') }}</span>
+                        </a>
+                        </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="btn btn-link btn-wide">Login</a>
-                    @endauth
+                    @endif
+
                 </div>
             </div>
         </div>

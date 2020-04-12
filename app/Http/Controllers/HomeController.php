@@ -49,7 +49,8 @@ class HomeController extends Controller
             Session::remove('transcription');
         }
         $uploads = Auth::user()->uploads()->get();
-        return view('pages.dashboard', compact('uploads'));
+        $texts = Auth::user()->texts()->get();
+        return view('pages.dashboard', compact('uploads', 'texts'));
     }
     public function capture(Request $request)
     {

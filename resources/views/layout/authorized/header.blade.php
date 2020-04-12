@@ -26,6 +26,20 @@
     <link href="{{ asset('css/skins/aside/light.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/custom.css') }}?time={{ time() }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('scss/main.css') }}?time={{ time() }}" rel="stylesheet" type="text/css" />
+    <style>
 
+        .text-ellipsis {
+            height: 150px;
+            display: inline-block;
+            /* width: 514px; */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 20px;
+            font-size: 1.3rem;
+            margin: 0px;
+            background: rgba(228, 228, 228, 0.98);
+            resize: both;
+        }
+    </style>
     <!--end::Layout Skins -->
 </head>

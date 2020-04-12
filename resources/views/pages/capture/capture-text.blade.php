@@ -1,12 +1,11 @@
 @extends(isset(Auth::user()->id) ? 'layout.authorized.app' : 'layout.app')
-@section('title', 'Capture Thoughts')
+@section('title', '')
 @section('capture-active', 'kt-menu__item--active')
 @section('content')
 
     <div class="container">
         <div class="kt-portlet">
             <div class="kt-portlet__body">
-                <h1 class="display-4">Capture your thoughts and feelings</h1>
                 <p><b>Please share your fears, frustrations, and needs
                         during this time of crisis, as well as what is helping you to get through it.</b>
                     Feel free to share any additional thoughts or feelings as you see fit.

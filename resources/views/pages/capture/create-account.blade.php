@@ -2,7 +2,7 @@
     <script>window.location.href = '{{ \App\Providers\RouteServiceProvider::HOME }}';</script>
 @endauth
 @extends('layout.app')
-@section('title', 'Create Account')
+@section('title', '')
 @section('content')
 
     <div class="container content">
