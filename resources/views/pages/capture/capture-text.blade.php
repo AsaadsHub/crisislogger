@@ -10,16 +10,17 @@
                 <p><b>Please share your fears, frustrations, and needs
                         during this time of crisis, as well as what is helping you to get through it.</b>
                     Feel free to share any additional thoughts or feelings as you see fit.
-                    Your recording can range from 30 seconds to 5 minutes.
-                    It will be transcribed by Google's transcription service,
-                    and you will be able to view a <b>word cloud</b> created from the transcript.
-                    You will be able to save the recording for <b>private use
+                    You will be able to save what you type <b>private use
                         or share it publicly</b>.
-                    We hope that you will come back and record more.
-                    Please avoid using any identifying names or information.
-                    <font color="red">NOTE: You must enter your email address
-                        at the end for us to be able to log your recording.</font></p>
-                <h3>Create the text </h3>
+                    We hope that you will come back and enter more.
+                    Please avoid using any identifying names or information.</p>
+                <h3>Type in the box below </h3>
+
+                <p>If you wish to create a video recording instead,
+                <a href="{{ route('capture-video') }}">click here</a>,
+                and if you wish to create an audio recording,
+                <a href="{{ route('capture-video') }}">click here</a>.</p>
+
                 <div>
                     <div id="recordingsList" class="d-none">
                         <h3>Your text:</h3>

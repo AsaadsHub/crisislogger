@@ -18,8 +18,10 @@
                 We hope that you will come back and record more.
                 Please avoid using any identifying names or information.</p>
                 <h3>Create an audio recording</h3>
+
                 <p>If you wish to create a video recording instead,
-                <a href="{{ route('capture-video') }}">click here.</a></p>
+                <a href="{{ route('capture-video') }}">click here</a>.</p>
+
                 <p>(1) Press <b>Start</b> to begin recording
                 (and again to delete and re-record).</p>
                 <p>(2) Press <b>Stop</b> to end recording.</p>

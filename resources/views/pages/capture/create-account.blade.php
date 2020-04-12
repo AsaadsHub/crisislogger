@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Submit</button>
-                        <!--a href="{{ route('home') }}" class="btn btn-link">Skip</a-->
+                        <a href="{{ route('home') }}" class="btn btn-link">Skip</a>
                     </div>
 
                     <input type="hidden" value="{{ Session::get('filename') }}" name="filename" />
