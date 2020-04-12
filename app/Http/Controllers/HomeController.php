@@ -48,8 +48,8 @@ class HomeController extends Controller
             // Clear the session
             Session::remove('transcription');
         }
-
-        return view('pages.dashboard');
+        $uploads = Auth::user()->uploads()->get();
+        return view('pages.dashboard', compact('uploads'));
     }
     public function capture(Request $request)
     {
