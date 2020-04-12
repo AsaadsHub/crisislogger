@@ -14,12 +14,14 @@
                         or share it publicly</b>.
                     We hope that you will come back and enter more.
                     Please avoid using any identifying names or information.</p>
-                <h3>Type in the box below </h3>
 
                 <p>If you wish to create a video recording instead,
                 <a href="{{ route('capture-video') }}">click here</a>,
-                and if you wish to create an audio recording,
+                or if you wish to create an audio recording,
                 <a href="{{ route('capture-video') }}">click here</a>.</p>
+
+
+                <h3>Type in the box below </h3>
 
                 <div>
                     <div id="recordingsList" class="d-none">
@@ -27,7 +29,7 @@
                     </div>
                     <form >
                         <div class="form-group">
-                            <label for="text-area">Enter text</label>
+                            <!--label for="text-area">Enter text</label-->
                             <textarea class="form-control" aria-label="With textarea" name="mind-text"></textarea>
                         </div>
                     </form>
