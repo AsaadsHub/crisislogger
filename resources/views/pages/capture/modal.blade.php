@@ -14,6 +14,7 @@
                     <div class="form-group">
                         <p>Share publicly?</p>
                         <div class="kt-radio-inline">
+                            @if(!request()->has('type'))
                                 <label class="kt-radio">
                                     <input type="radio" name="share" value="1" checked="checked"> Yes -- recording + transcript
                                     <span></span>
@@ -22,6 +23,12 @@
                                     <input type="radio" name="share" value="2"> transcript only
                                     <span></span>
                                 </label>
+                            @else
+                                <label class="kt-radio">
+                                    <input type="radio" name="share" value="1" checked="checked"> Yes
+                                    <span></span>
+                                </label>
+                            @endif
                                 <label class="kt-radio">
                                     <input type="radio" name="share" value="0"> No
                                     <span></span>
@@ -48,7 +55,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="upload">Upload</button>
+                    <button type="submit" class="btn btn-primary" id="upload"> {{!request()->has('type')? 'Upload' : 'Continue'}}</button>
                 </div>
             </form>
         </div>

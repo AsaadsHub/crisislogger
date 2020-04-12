@@ -58,4 +58,8 @@ class User extends Authenticatable
         return $this->hasMany(Transcription::class, 'user_id');
     }
 
+    public function texts()
+    {
+        return $this->hasMany(Texts::class, 'user_id');
+    }
 }

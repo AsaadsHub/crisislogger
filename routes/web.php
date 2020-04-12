@@ -27,7 +27,9 @@ Route::prefix('capture')->group(function() {
     Route::get('video', function () {
         return view('pages.capture.capture-video');
     })->name('capture-video');
-
+    Route::get('text', function () {
+        return view('pages.capture.capture-text');
+    })->name('capture-text');
     Route::get('create', function () {
         return view('pages.capture.create-account');
     })->name('capture-create-account');
