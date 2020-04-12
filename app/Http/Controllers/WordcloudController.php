@@ -26,7 +26,7 @@ class WordcloudController extends Controller
 
         // Get a list of transcriptions
         /** @var Transcription[] $transcriptions */
-        $transcriptions = $user->transcriptions();
+        $transcriptions = $user->transcriptions()->get();
         $words = [];
 
         // Loop through the transcriptions and get a list of words
