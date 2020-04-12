@@ -7,14 +7,17 @@
         <div class="kt-portlet">
             <div class="kt-portlet__body">
                 <h1 class="display-4">Capture your thoughts and feelings</h1>
-                <p><b>Please share your fears, frustrations, and hopes.</b>
+                <p><b>Please share your fears, frustrations, and needs 
+                during this time of crisis, as well as what is helping you to get through it.</b> 
                 Your recording can range from 30 seconds to 5 minutes.
                 It will be transcribed by Google's transcription service,
                 and you will be able to view a <b>word cloud</b> created from the transcript.
                 You will be able to save the recording for <b>private use
                 or share it publicly</b>.
                 We hope that you will come back and record more.
-                Please avoid using any identifying names or information.</p>
+                Please avoid using any identifying names or information.
+                <font color="red">NOTE: You must enter your email address
+                at the end for us to be able to log your recording.</font></p>
                 <h3>Create a video recording</h3>
                 <p>If you wish to create an audio recording instead,
                 <a href="{{ route('capture-audio') }}">click here.</a></p>

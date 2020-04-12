@@ -54,6 +54,7 @@ class Upload extends Model
         $upload->contribute_to_science = $this->contribute_to_science;
         $upload->name = $name . '.wav';
         $upload->share = $this->share;
+        $upload->voice = $this->voice;
         $upload->save();
 
         return $upload;

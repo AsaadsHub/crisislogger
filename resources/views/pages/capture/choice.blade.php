@@ -6,7 +6,6 @@
     <div class="container">
 
         @component('components.portlet')
-            <h1 class="display-4">Please tell us with which voice you would like to express yourself:</h1>
             <div class="text-center row">
 
                 @component('components.voice', ['voice' => 'Parent'])

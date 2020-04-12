@@ -37,8 +37,6 @@ class Transcription extends Model
      * @throws FileNotFoundException
      */
     public static function audio(Upload $upload){
-        $user = Auth::user();
-
         $content = Storage::disk('gcs')->get($upload->name);
 
         # set string as audio content
@@ -72,7 +70,7 @@ class Transcription extends Model
         // If not empty, save into transcriptions table
         $transcription = new Transcription();
         $transcription->upload_id = $upload->id;
-        if($user) $transcription->user_id = $user->id;
+        $transcription->user_id = $upload->user_id;
         $transcription->text = $response;
         $transcription->save();
 

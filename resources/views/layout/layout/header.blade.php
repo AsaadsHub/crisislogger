@@ -5,8 +5,8 @@
                 <a href="/"><img src="{{ asset('media/logos/CMI_spot_logo.jpg') }}" alt="{{ config('app.name') }}"></a>
             </div>
             <div class="col-sm-12 col-md-8">
-                <!--div class="float-right">
-                    <button class="btn btn-primary btn-wide mr-2" id="share-thought-btn">Share Your Thoughts</button>
+                <div class="float-right">
+                    <a href="{{ route('capture-choice') }}" class="btn btn-primary btn-wide mr-2">Share Your Thoughts</a>
                     @auth
                         <div class="btn-group">
                             <a href="{{ route('dashboard') }}" class="btn btn-link">Dashboard</a>
@@ -23,9 +23,6 @@
                     @else
                         <a href="{{ route('login') }}" class="btn btn-link btn-wide">Login</a>
                     @endauth
-                </div-->
-                <div class="float-right">
-                    <a href="{{ route('login') }}" class="btn btn-link btn-wide">Login</a>
                 </div>
             </div>
         </div>

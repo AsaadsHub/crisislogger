@@ -16,6 +16,9 @@ function uploadButtonClicked(file, filename){
     fd.append("contribute", $("input[name='contribute']:checked").val());
     fd.append("voice", getParameterByName("voice"));
 
+    console.log('***********************************************************');
+    console.log(file);
+    console.log('***********************************************************');
     console.log(getParameterByName("voice"));
 
     axios.post('/api/upload', fd, {

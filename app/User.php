@@ -45,17 +45,17 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function uploads(){
-        return Upload::where('user_id', $this->id)->get();
+        return $this->hasMany(Upload::class, 'user_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transcriptions(){
-        return Transcription::where('user_id', $this->id)->get();
+        return $this->hasMany(Transcription::class, 'user_id');
     }
 
 }
