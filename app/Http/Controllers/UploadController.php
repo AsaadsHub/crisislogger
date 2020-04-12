@@ -72,7 +72,7 @@ class UploadController extends Controller
             }
         }
         $response = [
-            'message' => 'File uploaded successfully. ONE MORE STEP: Enter your email address on the next screen for us to log your recording.',
+            'message' => 'File uploaded successfully.',
             'file' => $file,
             'redirect' => $redirect,
             'transcription' => $transcription->id ?? null
