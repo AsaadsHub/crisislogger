@@ -18,7 +18,9 @@
                 Please avoid using any identifying names or information.</p>
 
                 <p>If you wish to create an audio recording instead,
-                <a href="{{ route('capture-audio') }}">click here</a>.</p>
+                <a href="{{ route('capture-audio') }}">click here</a>,
+                or if you wish to type some text instead,
+                <a href="{{ route('capture-text') }}">click here</a>.</p>
 
                 <h3>Create a video recording</h3>
 
