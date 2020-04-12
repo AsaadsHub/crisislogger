@@ -22,7 +22,9 @@
 
                     <div class="form-group">
                         <label>Password<span class="text-danger"></span></label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" aria-describedby="passwordHelp" name="password" value="NOACCOUNT" required>
+
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" aria-describedby="passwordHelp" name="password" required>
+
                         <span class="form-text text-muted">Must be at least 8 characters.</span>
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -33,7 +35,9 @@
 
                     <div class="form-group">
                         <label>Confirm Password<span class="text-danger"></span></label>
-                        <input type="password" class="form-control"  name="password_confirmation" value="NOACCOUNT" required>
+
+                        <input type="password" class="form-control"  name="password_confirmation" required>
+
                     </div>
 
                     <div class="form-group">
