@@ -16,9 +16,7 @@
                 You will be able to save the recording for <b>private use
                 or share it publicly</b>.
                 We hope that you will come back and record more.
-                Please avoid using any identifying names or information.
-                <font color="red">NOTE: You must enter your email address
-                at the end for us to be able to log your recording.</font></p>
+                Please avoid using any identifying names or information.</p>
                 <h3>Create an audio recording</h3>
                 <p>If you wish to create a video recording instead,
                 <a href="{{ route('capture-video') }}">click here.</a></p>
