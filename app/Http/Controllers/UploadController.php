@@ -28,9 +28,8 @@ class UploadController extends Controller
         {
             \App::abort(404, 'The user information not found'); // need to prevent if user doesn't enter email address
         }
-        $file_extension = $request->file('data')->getClientOriginalExtension();
+        $file_extension = $request->file('data')->guessExtension();
         $file = Storage::disk('gcs')->putFile('', $request->file('data'));
-
         // Store the file name in the session in case the user decides to sign up.
         Session::put('filename', $file);
         // Save it in the database

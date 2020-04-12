@@ -42,7 +42,6 @@ class Transcription extends Model
         # set string as audio content
         $audio = (new RecognitionAudio())
             ->setContent($content);
-
         # The audio file's encoding, sample rate and language
         $config = new RecognitionConfig([
             // 'encoding' => AudioEncoding::LINEAR16,
@@ -51,7 +50,11 @@ class Transcription extends Model
         ]);
 
         # Instantiates a client
-        $client = new SpeechClient();
+        $client = new SpeechClient(
+        [
+            'credentials' => config('app.google_credentials'),
+        ]
+        );
 
         # Detects speech in the audio file
         $google_response = $client->recognize($config, $audio);
