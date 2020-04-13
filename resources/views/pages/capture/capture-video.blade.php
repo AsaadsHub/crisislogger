@@ -6,7 +6,7 @@
     <div class="container">
         <div class="kt-portlet">
             <div class="kt-portlet__body">
-                <h1 class="display-4">Capture your thoughts and feelings</h1>
+                <h1 class="display-4">Capture your thoughts and feelings with video</h1>
                 <p><b>Please share your fears, frustrations, and needs
                 during this time of crisis, as well as what is helping you to get through it.</b>
                 Your recording can range from 30 seconds to 5 minutes.

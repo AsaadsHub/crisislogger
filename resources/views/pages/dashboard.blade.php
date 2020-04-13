@@ -1,5 +1,5 @@
 @extends('layout.authorized.app')
-@section('title', 'My Recordings')
+@section('title', '')
 @section('dashboard-active', 'kt-menu__item--active')
 @section('content')
 

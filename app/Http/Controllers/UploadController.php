@@ -116,7 +116,7 @@ class UploadController extends Controller
         //}
         // If the are contributing to science, we will transcribe the message and save it
         $response = [
-            'message' => 'ONE MORE STEP: Enter your email address on the next screen for us to log your text.',
+            'message' => 'Successfully saved!',
             'redirect' => $redirect,
         ];
         return response()->json($response, Response::HTTP_OK);
