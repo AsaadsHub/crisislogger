@@ -1,0 +1,7 @@
+
+extension = phar.so
+suhosin.executor.include.whitelist = phar; {{{ The following lines were automatically added by DreamHost
+zend_extension=opcache.so
+; {{{ The following lines were automatically added by DreamHost
+zend_extension=opcache.so
+; }}} That's all from DreamHost
