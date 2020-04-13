@@ -59,5 +59,8 @@ class Upload extends Model
 
         return $upload;
     }
-
+    public function transcript()
+    {
+        return $this->hasOne(Transcription::class, 'upload_id');
+    }
 }

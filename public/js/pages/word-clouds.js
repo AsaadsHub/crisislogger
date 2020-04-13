@@ -3,14 +3,8 @@ let spinner = document.getElementById('spinner');
 // Encapsulate the word cloud functionality
 function wordCloud(selector) {
     let width, height;
-    if(window.innerWidth < 600){
-        width = window.innerWidth - 40;
-        height = 200;
-    } else {
-        width = window.innerWidth - 400;
-        height = 600;
-    }
-
+    width = $('.kt-portlet__body').innerWidth() - 20;
+    height = 200;
 
     var fill = d3.scale.category20();
     //Construct the word cloud's SVG element
@@ -82,19 +76,15 @@ axios.post('/api/word_cloud', {
             .forEach(function eachKey(key) {
                 words.push({
                     text: key,
-                    size: obj[key] * 10
+                    size: obj[key] * 14
                 });
             });
 
-        var portlet = document.createElement('div');
         var portlet_body = document.createElement('div');
 
-        portlet.classList.add('kt-portlet');
         portlet_body.classList.add('kt-portlet__body');
-        portlet.appendChild(portlet_body);
-
-        document.getElementById('clouds').append(portlet);
-
+        document.getElementById('transcript-'+i).append(portlet_body);
+        $('#transcript-'+i).find('#spinner').remove();
         var myWordCloud = wordCloud(portlet_body);
         myWordCloud.update(words);
     }

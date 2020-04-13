@@ -31,7 +31,7 @@ class WordcloudController extends Controller
 
         // Loop through the transcriptions and get a list of words
         foreach($transcriptions as $transcription){
-            $words[$transcription->id] = $this->generateWords($transcription->text);
+            $words[$transcription->upload_id] = $this->generateWords($transcription->text);
         }
 
         return response()->json($words, Response::HTTP_OK);
