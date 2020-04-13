@@ -1,5 +1,5 @@
 @extends(isset(Auth::user()->id) ? 'layout.authorized.app' : 'layout.app')
-@section('title', 'Choose Recording Method')
+@section('title', '')
 @section('capture-active', 'kt-menu__item--active')
 @section('content')
 

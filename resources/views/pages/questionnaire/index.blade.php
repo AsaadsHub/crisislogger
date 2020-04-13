@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Questionnaire')
+@section('title', '')
 @section('description', '')
 @section('content')
 

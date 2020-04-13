@@ -1,5 +1,5 @@
 @extends('layout.authorized.app')
-@section('title', 'My Profile')
+@section('title', '')
 @section('profile-active', 'kt-menu__item--active')
 @section('content')
 
