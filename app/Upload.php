@@ -23,7 +23,7 @@ use Storage;
 class Upload extends Model
 {
     protected $appends = [
-	    'link', 'text'
+        'link', 'text'
     ];
 
     /**
@@ -32,7 +32,7 @@ class Upload extends Model
     public function getLinkAttribute()
     {
         $name = str_replace('/storage/', '', $this->name);
-        return 'https://storage.googleapis.com/' . config('app.google_cloud_buck') . "/$name";
+        return 'https://storage.googleapis.com/' . env('GOOGLE_CLOUD_STORAGE_BUCKET') . "/$name";
     }
 
     /**
@@ -55,12 +55,9 @@ class Upload extends Model
         $upload->contribute_to_science = $this->contribute_to_science;
         $upload->name = $name . '.wav';
         $upload->share = $this->share;
-	    $upload->voice = $this->voice;
         $upload->save();
+
         return $upload;
     }
-    public function transcript()
-    {
-        return $this->hasOne(Transcription::class, 'upload_id');
-    }
+
 }
