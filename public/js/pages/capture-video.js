@@ -49,7 +49,7 @@ function requestVideo() {
             advanced: [
                 { width: 320 },
                 { width: { min: 320 } },
-                { frameRate: 60 },
+                { frameRate: 15 },
                 { width: { max: 320 } },
                 { facingMode: "user" }
             ]
